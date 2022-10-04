@@ -13,7 +13,7 @@
         <td><%= post.content %></td>
         <td><%= post.category.title %></td>
         <td><%= link_to 'Show Category', [@category] %></td>
-        <td><%= link_to 'Show Post', [@category, post] %></td>
+        <td><%= link_to post.shared_url, [@category, post] %></td>
         <td><%= button_to "Destroy Post", [@category, post], method: :delete %></td>
       </tr>
     <% end %>

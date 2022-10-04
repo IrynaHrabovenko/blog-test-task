@@ -12,9 +12,7 @@ class PostsController < ApplicationController
   def new
     @post = @category.posts.build
     @title = Posts::AttributesGenerator.new.call(params)[0]
-    shared_url = Posts::AttributesGenerator.new.call(params)[1]
-    @post.title = @title
-    @post.shared_url = shared_url
+    @shared_url = Posts::AttributesGenerator.new.call(params)[1]
   end
 
   def create
