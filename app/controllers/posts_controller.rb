@@ -11,6 +11,8 @@ class PostsController < ApplicationController
 
   def new
     @post = @category.posts.build
+    @title = Posts::AttributesGenerator.new.call(params)[0]
+    @post.title = @title
   end
 
   def create
