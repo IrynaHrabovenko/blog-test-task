@@ -1,0 +1,7 @@
+<%= form_with(model: [@category, post], local: true) do |f| %>
+  <%= f.label :title, @title %>
+  <%= f.hidden_field :title, :value => @title %>
+  <%= f.text_area :content %>
+  <%= f.hidden_field :shared_url, :value => @shared_url %>
+  <%= f.submit %>
+<% end %>
