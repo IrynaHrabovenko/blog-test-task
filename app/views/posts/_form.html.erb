@@ -1,0 +1,6 @@
+<%= bootstrap_form_with(model: [@category, post], local: true) do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_area :content %>
+  <%= f.text_area :shared_url %>
+  <%= f.submit %>
+<% end %>
