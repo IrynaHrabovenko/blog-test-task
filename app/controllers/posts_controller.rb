@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post.update_attribute(:shared_url, nil) unless params[:hit].blank?
   end
 
   def new
@@ -40,6 +41,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :content, :shared_url, :category_id)
+    params.require(:post).permit(:title, :content, :shared_url, :category_id, :hit)
   end
 end
