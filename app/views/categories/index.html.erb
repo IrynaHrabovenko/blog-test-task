@@ -1,13 +1,21 @@
-<h1>Categories</h1>
-<div id="categories">
-  <% @categories.each do |category| %>
-    <p>
-      <strong>Title:</strong>
-      <%= category.title %>
-    </p>
-    <p>
-      <%= link_to "Show this category", category_path(category) %>
-    </p>
-  <% end %>
-</div>
+<h2>All categories</h2>
+<% @categories.each do |category| %>
+  <p>
+    <strong>Title:</strong>
+    <%= category.title %>
+  </p>
+  <p>
+    <%= link_to "Show this category", category_path(category) %>
+  </p>
+<% end %>
 <%= link_to "New category", new_category_path %>
+<h2>Categories with empty shared url posts</h2>
+<% @categories_with_empty_shared_url_posts.each do |category| %>
+  <p>
+    <strong>Title:</strong>
+    <%= category.title %>
+  </p>
+  <p>
+    <%= link_to "Show this category", category_path(category) %>
+  </p>
+<% end %>

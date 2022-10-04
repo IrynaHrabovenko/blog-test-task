@@ -3,6 +3,7 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.all
+    @categories_with_empty_shared_url_posts = Category.by_post_shared_url_presence
   end
 
   def show
